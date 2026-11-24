@@ -18,16 +18,9 @@ services:
       - path: .env.container
         format: raw
     ports:
-      - '${BIND_ADDRESS:-127.0.0.1}:${HTTP_PORT:-5004}:3052'
-    networks:
-      platform:
-        aliases: [storage]
+      - '${BIND_ADDRESS:-0.0.0.0}:${HTTP_PORT:-5004}:3052'
     volumes:
       - uploads:/app/uploads
-networks:
-  platform:
-    external: true
-    name: ${NEOLA_NETWORK:-neola-platform}
 volumes:
   uploads:
     external: true
