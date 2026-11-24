@@ -9,7 +9,8 @@
     "docker:config": "docker compose --env-file .env.deploy -f compose.independent.yaml config --quiet",
     "docker:build": "docker compose --env-file .env.deploy -f compose.independent.yaml build",
     "docker:up": "docker compose --env-file .env.deploy -f compose.independent.yaml up -d --build",
-    "docker:logs": "docker compose --env-file .env.deploy -f compose.independent.yaml logs --tail=100 -f"
+    "docker:logs": "docker compose --env-file .env.deploy -f compose.independent.yaml logs --tail=100 -f",
+    "docker:customer": "docker compose --env-file .env.deploy -f compose.independent.yaml -f compose.customer.yaml up -d --build"
   },
   "keywords": [],
   "author": "",

@@ -1,0 +1,13 @@
+# Combine with compose.independent.yaml; the existing upload volume stays writable.
+services:
+  storage:
+    build:
+      target: customer
+    environment:
+      NODE_ENV: production
+      NEOLA_CUSTOMER_DEPLOYMENT: 'true'
+      CONTROL_PLANE_MODE: subscription
+    read_only: true
+    tmpfs: [/tmp]
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
