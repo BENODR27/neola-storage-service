@@ -1,0 +1,10 @@
+.env.development
+.env.test
+.env.production
+config.json
+node_modules
+uploads/*
+.env.container
+.env.deploy
+!.env.container.example
+!.env.deploy.example
