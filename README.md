@@ -8,5 +8,4 @@ Install with `npm install`, run with `npm start`, or use `npm run dev` for watch
 
 The existing API prefix is `/api/ss`. Image uploads use the images multipart field; video uploads use the video field. A pjname identifies the owning application. Uploaded files are stored beneath uploads. Review routes/UploadRouter.js and the shared authentication middleware before extending the upload contract.
 
-Storage hardening and full MMMS document/photo/video attachment journeys still need acceptance work. Do not treat the current public static-file route as suitable for confidential maintenance documents. See [architecture](../docs/ARCHITECTURE.md) and [coverage](../docs/MMMS-REQUIREMENTS-COVERAGE.md).
-# neola-storage-service
+MMMS attachments use authenticated, scoped upload/download routes. Private MMMS files are blocked from legacy public aliases. The independent profile sets `STORAGE_MMMS_ONLY=true`; preserve its upload volume and shared IAM authentication. See [DEPLOYMENT.md](DEPLOYMENT.md) for startup and production licensing settings.
